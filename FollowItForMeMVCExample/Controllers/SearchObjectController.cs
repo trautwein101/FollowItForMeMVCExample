@@ -25,6 +25,21 @@ namespace FollowItForMeMVCExample.Controllers
             return View(await _context.SearchObject.ToListAsync());
         }
 
+        // GET: ShowSearchForm
+        public IActionResult ShowSearchForm()
+        {
+            return View();
+        }
+
+
+        //POST: SearchObject/ShowSearchResults
+        [HttpPost]
+        public async Task<IActionResult> ShowSearchResults(String SearchPhrase)
+        {
+            return View("Index", await _context.SearchObject.Where(obj => obj.Name.Contains(SearchPhrase)).ToListAsync());
+        } 
+
+
         // GET: SearchObject/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -15,7 +15,5 @@ namespace FollowItForMeMVCExample.Models
         public string SearchCriteria { get; set; }
         public string Description { get; set; }
 
-
-
     }
 }
