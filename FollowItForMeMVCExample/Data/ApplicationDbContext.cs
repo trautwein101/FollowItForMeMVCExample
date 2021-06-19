@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using FollowItForMeMVCExample.Models;
 
 namespace FollowItForMeMVCExample.Data
 {
@@ -12,5 +13,6 @@ namespace FollowItForMeMVCExample.Data
             : base(options)
         {
         }
+        public DbSet<SearchObject> SearchObject { get; set; }
     }
 }
