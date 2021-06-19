@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FollowItForMeMVCExample.Data;
 using FollowItForMeMVCExample.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FollowItForMeMVCExample.Controllers
 {
@@ -59,6 +60,7 @@ namespace FollowItForMeMVCExample.Controllers
         }
 
         // GET: SearchObject/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -67,6 +69,7 @@ namespace FollowItForMeMVCExample.Controllers
         // POST: SearchObject/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,UserId,Type,Name,SearchCriteria,Description")] SearchObject searchObject)
@@ -81,6 +84,7 @@ namespace FollowItForMeMVCExample.Controllers
         }
 
         // GET: SearchObject/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -99,6 +103,7 @@ namespace FollowItForMeMVCExample.Controllers
         // POST: SearchObject/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,Type,Name,SearchCriteria,Description")] SearchObject searchObject)
@@ -132,6 +137,7 @@ namespace FollowItForMeMVCExample.Controllers
         }
 
         // GET: SearchObject/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -150,6 +156,7 @@ namespace FollowItForMeMVCExample.Controllers
         }
 
         // POST: SearchObject/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
