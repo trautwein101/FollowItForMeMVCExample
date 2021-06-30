@@ -156,14 +156,10 @@ C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMV
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObjects\Create.cshtml.g.cs
-C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObjects\Delete.cshtml.g.cs
-C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObjects\Details.cshtml.g.cs
-C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObjects\Edit.cshtml.g.cs
-C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObjects\Index.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\Create.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\Delete.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\Details.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\Edit.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\Index.cshtml.g.cs
 C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\Razor\Views\SearchObject\ShowSearchForm.cshtml.g.cs
+C:\Users\traut\OneDrive\Documents\GitHub\FollowItForMeMVCExample\FollowItForMeMVCExample\obj\Debug\net5.0\FollowItForMeMVCExample.csprojAssemblyReference.cache
