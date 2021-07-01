@@ -14,7 +14,8 @@ namespace FollowItForMeMVCExample.Controllers
     public class SearchObjectController : Controller
     {
         private readonly ApplicationDbContext _context;
-
+        [BindProperty] 
+        public SearchObject searchObject { get; set; }
         public SearchObjectController(ApplicationDbContext context)
         {
             _context = context;
@@ -100,61 +101,73 @@ namespace FollowItForMeMVCExample.Controllers
             return View(searchObject);
         }
 
-        // POST: SearchObject/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //This is just better binding 6/30
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,Type,Name,SearchCriteria,Description")] SearchObject searchObject)
+        public async Task<IActionResult> Upsert()
         {
-            if (id != searchObject.Id)
-            {
-                return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
-                try
+                //searchObject = await _context.SearchObject.FirstOrDefaultAsync(m => m.Id == id);
+
+                if (searchObject.Id == 0)
+                {
+                    return NotFound();
+                }
+                else
                 {
                     _context.Update(searchObject);
                     await _context.SaveChangesAsync();
+
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!SearchObjectExists(searchObject.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
             }
-            return View(searchObject);
+
+
+            return RedirectToAction("Index");
+            // return RedirectToAction(nameof(Index));
         }
 
-        // GET: SearchObject/Delete/5
-        [Authorize]
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var searchObject = await _context.SearchObject
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (searchObject == null)
-            {
-                return NotFound();
-            }
+        // POST: SearchObject/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Edit(int id, [Bind("Id,UserId,Type,Name,SearchCriteria,Description")] SearchObject searchObject)
+        //{
+        //    if (id != searchObject.Id)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(searchObject);
-        }
+        //    if (ModelState.IsValid)
+        //    {
+        //        try
+        //        {
+        //            _context.Update(searchObject);
+        //            await _context.SaveChangesAsync();
+        //        }
+        //        catch (DbUpdateConcurrencyException)
+        //        {
+        //            if (!SearchObjectExists(searchObject.Id))
+        //            {
+        //                return NotFound();
+        //            }
+        //            else
+        //            {
+        //                throw;
+        //            }
+        //        }
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    return View(searchObject);
+        //}
 
+
+        //Using asp helpers
         // POST: SearchObject/Delete/5
         [Authorize]
         [HttpPost, ActionName("Delete")]
@@ -171,5 +184,35 @@ namespace FollowItForMeMVCExample.Controllers
         {
             return _context.SearchObject.Any(e => e.Id == id);
         }
+
+        #region API Calls
+
+        //Using javascript validation
+        // GET: SearchObject/Delete/5
+
+        [Authorize]
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int? id)
+        {
+ 
+            var searchObject = await _context.SearchObject
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (searchObject == null)
+            {
+                //return NotFound();
+                return Json(new { success = false, message = "Error while Deleting" });
+            }
+
+                _context.SearchObject.Remove(searchObject);
+                await _context.SaveChangesAsync();
+
+            return Json(new { success = true, message = "Delete successful" });
+            
+        }
+        #endregion
+
+
+
+
     }
 }
